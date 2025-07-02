@@ -1,6 +1,7 @@
 
 
 import 'package:e_commerce_app/models/my_product.dart';
+import 'package:e_commerce_app/pages/details_screen.dart';
 import 'package:e_commerce_app/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             "Our Products",
@@ -79,7 +81,15 @@ class _HomeScreenState extends State<HomeScreen> {
     itemCount: MyProducts.allProducts.length,
     itemBuilder: (context,index) {
       final allProducts = MyProducts.allProducts[index];
-      return ProductCard(product: allProducts);
+      return GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>DetailsScreen(product: allProducts)
+          ),
+        ),
+        child: ProductCard(product: allProducts),
+      );
     },
   );
 
@@ -94,7 +104,14 @@ class _HomeScreenState extends State<HomeScreen> {
     itemCount: MyProducts.jacketsList.length,
     itemBuilder: (context,index) {
       final jacketsList = MyProducts.jacketsList[index];
-      return ProductCard(product: jacketsList);
+      return GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailsScreen(product: jacketsList),
+          )
+        ),
+        child: ProductCard(product: jacketsList));
     },
   );
 
@@ -109,7 +126,15 @@ class _HomeScreenState extends State<HomeScreen> {
     itemCount: MyProducts.sneakersList.length,
     itemBuilder: (context, index) {
       final sneakersList = MyProducts.sneakersList[index];
-      return ProductCard(product: sneakersList);
+      return GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailsScreen(product: sneakersList),
+          ),
+        ),
+        child: ProductCard(product: sneakersList),
+      );
     },
   );
 }
