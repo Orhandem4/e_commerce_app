@@ -10,8 +10,8 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Details",style: TextStyle(color: Colors.white),), centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 255, 0, 0),
+        title: Text("Details",), 
+        centerTitle: true,
       ),
       body: Column(
         children: [
@@ -119,8 +119,7 @@ class DetailsScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomSheet: BottomAppBar(
-        child: Container(
+      bottomSheet: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           alignment: Alignment.center,
           width: double.infinity,
@@ -133,6 +132,7 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 '\$' '${product.price}',
@@ -150,7 +150,6 @@ class DetailsScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

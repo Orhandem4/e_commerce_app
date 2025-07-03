@@ -22,8 +22,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorSchemeSeed: Colors.red,
-        scaffoldBackgroundColor: Colors.grey.shade100,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white
+        )
       ),
       home: const MyHomePage(),
     ),
@@ -50,8 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 0, 0),
-        title: const Text("E - Commerce Shop", style: TextStyle(color: Colors.white),),
+       /*  backgroundColor: Color.fromARGB(255, 255, 0, 0), */
+        title: const Text("E - Commerce Shop", /* style: TextStyle(color: Colors.white), */),
         centerTitle: true,
         actions: [
           IconButton(
