@@ -35,6 +35,7 @@ class _ProductCardState extends State<ProductCard> {
                   provider.isExist(widget.product)
                   ? Icons.favorite
                   : Icons.favorite_border_outlined,
+                  color: const Color.fromARGB(255, 255, 0, 0),
                 ),
               ),
             ],
@@ -58,7 +59,7 @@ class _ProductCardState extends State<ProductCard> {
             widget.product.category,
             style: const TextStyle(
               fontSize: 14,
-              color: Colors.red,
+              color: Color.fromARGB(255, 255, 0, 0),
             ),
           ),
           Text(

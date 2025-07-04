@@ -12,8 +12,7 @@ class _CartDetailsState extends State<CartDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 0, 0),
-        title: const Text("My Cart",style: TextStyle(color: Colors.white),),
+        title: const Text("My Cart",),
         centerTitle: true,
       ),
     );

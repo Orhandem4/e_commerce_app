@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
       margin: const EdgeInsets.only(top: 10, right: 10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isSelected == index ? Colors.red : Colors.red.shade300,
+        color: isSelected == index ? const Color.fromARGB(255, 255, 0, 0) : Colors.red.shade300,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(

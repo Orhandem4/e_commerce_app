@@ -2,6 +2,7 @@ import 'package:e_commerce_app/pages/cart_details.dart';
 import 'package:e_commerce_app/pages/favorite_screen.dart';
 import 'package:e_commerce_app/pages/home_screen.dart';
 import 'package:e_commerce_app/pages/profile_screen.dart';
+import 'package:e_commerce_app/providers/cart_provider.dart';
 import 'package:e_commerce_app/providers/favorite_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,14 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MultiProvider (
     providers: [
       ChangeNotifierProvider(create: (context) => FavoriteProvider()),
+      ChangeNotifierProvider(create: (context) => CartProvider()),
     ],
     child: MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 0, 0)),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.red,
+          backgroundColor: const Color.fromARGB(255, 255, 0, 0),
           foregroundColor: Colors.white
         )
       ),
@@ -53,8 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       /*  backgroundColor: Color.fromARGB(255, 255, 0, 0), */
-        title: const Text("E - Commerce Shop", /* style: TextStyle(color: Colors.white), */),
+        title: const Text("E - Commerce Shop",),
         centerTitle: true,
         actions: [
           IconButton(
@@ -74,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: (value) {
           setState(() => currentIndex = value);
         },
-        selectedItemColor: Colors.red,
+        selectedItemColor: const Color.fromARGB(255, 255, 0, 0),
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
